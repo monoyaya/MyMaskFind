@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.jackg.programmers.challenges.mymaskfind.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_dashboard"
+            app:destination="@id/navigation_find" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_find"
+        android:name="com.jackg.programmers.challenges.mymaskfind.ui.find.FindFragment"
+        android:label="@string/title_find"
+        tools:layout="@layout/fragment_find" >
+        <action
+            android:id="@+id/action_navigation_find_to_storeDetailFragment"
+            app:destination="@id/storeDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/storeDetailFragment"
+        android:name="com.jackg.programmers.challenges.mymaskfind.ui.storeDetail.StoreDetailFragment"
+        android:label="fragment_store_detail"
+        tools:layout="@layout/fragment_store_detail" >
+        <argument
+            android:name="storeData"
+            app:argType="com.jackg.programmers.challenges.mymaskfind.model.Store"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+</navigation>

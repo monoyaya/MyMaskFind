@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/sort_dist"
+        android:title="가까운 거리 순" />
+    <item
+        android:id="@+id/sort_dist_reverse"
+        android:title="먼 거리 순" />
+    <item
+        android:id="@+id/sort_remain"
+        android:title="재고 많은 순" />
+</menu>

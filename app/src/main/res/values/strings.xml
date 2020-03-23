@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">MyMaskFind</string>
+    <string name="title_home">홈</string>
+    <string name="title_find">검색</string>
+    <string name="title_notifications">공지</string>
+
+    <string name="date_pattern">YYYY/MM/DD HH:mm:ss</string>
+
+    <string name="base_url">https://8oi9s0nnth.apigw.ntruss.com/corona19-masks/v1/</string>
+    <string name="web_base">https://search.naver.com/search.naver?query=</string>
+    <string name="map_base">https://www.google.com/maps/dir/?api=1&amp;destination=</string>
+
+    <string name="toolbar_title">마스크 판매점 리스트</string>
+
+    <string name="store_name">판매점 이름</string>
+    <string name="store_label_date">마스크 입고 일시 :</string>
+    <string name="store_label_state">재고 상태 :</string>
+    <string name="store_label_type">유형 :</string>
+    <string name="store_label_create_date">데이터 요청 일시 :</string>
+    <string name="store_label_addr">주소 :</string>
+    <string name="store_label_dist">거리(미터) : </string>
+
+    <string name="bnt_back_txt">이전</string>
+    <string name="bnt_map_txt">구글맵</string>
+    <string name="bnt_web_txt">웹검색</string>
+
+    <string name="search_hint_first">특별시/광역시/도 [필수]</string>
+    <string name="search_hint_sec">시/군/구 [필수]</string>
+    <string name="search_hint_thi">읍/면/동 [생략 가능]</string>
+</resources>
