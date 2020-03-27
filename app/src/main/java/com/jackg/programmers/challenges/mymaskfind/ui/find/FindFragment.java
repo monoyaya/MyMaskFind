@@ -227,28 +227,29 @@ public class FindFragment extends Fragment {
                         }
                     }
 
-                    String qurey = metro + " " + city;
+                    String query = metro + " " + city;
 
-                    if (!local.equals("")) qurey = qurey + " " + local;
+                    if (!local.equals("")) query = query + " " + local;
 
-                    final String finalQurey = qurey;
+                    final String finalQuery = query;
 
                     client.getLastLocation().addOnSuccessListener(requireActivity(), location -> {
-                        LiveData<RetroResult> queryRt = findViewModel.getData(finalQurey, location);
+                        if (location != null) {
+                            LiveData<RetroResult> queryRt = findViewModel.getData(finalQuery, location);
 
-                        queryRt.observe(getViewLifecycleOwner(), retroResult -> {
-                            if (retroResult.getCount() == 0) {
-                                Toast.makeText(requireContext(), "검색된 결과가 없습니다.", Toast.LENGTH_SHORT).show();
-                            }
+                            queryRt.observe(getViewLifecycleOwner(), retroResult -> {
+                                if (retroResult.getCount() == 0) {
+                                    Toast.makeText(requireContext(), "검색된 결과가 없습니다.", Toast.LENGTH_SHORT).show();
+                                }
 
-                            binding.setData(retroResult);
-                            binding.executePendingBindings();
-                        });
+                                binding.setData(retroResult);
+                                binding.executePendingBindings();
+                            });
+                        } else {
+                            Toast.makeText(requireContext(), "위치정보를 사용할 수 없습니다.", Toast.LENGTH_LONG).show();
+                        }
                     });
-
-
-                })
-                .show();
+                }).show();
     }
 
     private void animate() {
